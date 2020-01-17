@@ -1,0 +1,2 @@
+There could be two format of pages. One that would contain the ongoing events(consisting of date).
+One that would contain the past events(consisting of rough detail of the timeline).
