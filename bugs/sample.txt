@@ -1,1 +1,3 @@
 This is where the bugs go.
+1.In line 29 header h1 is not opened.
+2.In line 68 it should be bootstrap instead of bootsrap.
