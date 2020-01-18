@@ -1,0 +1,11 @@
+# Bug in Line 29
+<a href="index.html" class="navbar-brand">Libook</h1></a>
+CHANGE:- <a href="index.html" class="navbar-brand"><h1>Libook</h1></a>
+
+# Bug in line 68
+ <script type="../scripts/bootsrap-js/jquery-3.4.1.js"></script>
+ CHANGE:-<script type="../scripts/bootstrap-js/jquery-3.4.1.js"></script>
+
+# Bug in line 72
+  <script src= "../scripts/bootsrap-js/bootstrap.min.js"></script>
+  CHANGE:- <script src= "../scripts/bootstrap-js/bootstrap.min.js"></script>
