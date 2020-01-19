@@ -1,4 +1,1 @@
 This is where the bugs go.
-(These are the errors)
-1.In line 29 header h1 was not opened.
-2.In lines 68 and 72 bootsrap should be replaced by bootstrap.
