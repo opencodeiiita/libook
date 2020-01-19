@@ -1,7 +1,7 @@
 # Libook
 
 A personal digital library with summaries, goals etc using html, css, and vanilla js.
-
+Join the community at slack and we can discuss your problems there.
 Quickly forgetting what we read is common in this era where data and information is overflowing. The reason being the limited storage capabilities of our brain. Thus before loosing some of those exceptional statements, motivational quotes, unforgettable moments, important points, jokes you couldn't stop laughing at, you should probably take a backup. Well this application aims to become the library of those precious pieces(at least initially). We are going to use __local storage__ to store the data so that none of your information is leaked. The aplication aims to have an intuitive ui. Note that the project currently is nowhere near that. So collaborate to complete this project.
 
 # Setting it up

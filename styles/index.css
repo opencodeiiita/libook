@@ -1,0 +1,14 @@
+footer {
+    background-color: #44494d;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 13px;
+    padding-top: 10px;
+    color: white;
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
