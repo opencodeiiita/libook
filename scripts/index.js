@@ -10,6 +10,7 @@ let i = localStorage.length;
 updateList();
 
 function handleAdd(e){
+    var m;
     e.preventDefault();
     for (var j in localStorage) {
         if (localStorage[j] === addTxt.value) {
