@@ -20,7 +20,7 @@ function handleAdd(e){
     }
         if(m==1){
            
-            document.getElementById("dupli").innerHTML ="<div class='alert alert-danger'>Title already exists!!! </div>";
+            document.getElementById("dupli").innerHTML ="<div class='alert alert-danger'>Title already exists. </div>";
             document.getElementById("success").innerHTML ="";
         }
         else{
