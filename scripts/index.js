@@ -12,6 +12,7 @@ function handleAdd(e){
     //Removing 'Your title will appear here' message after first input  
     if(localStorage.length ==1) titles.removeChild(titleMessage);
     insertCard(addTxt.value);
+    addTxt.value="";
     i++;
     console.log(localStorage);
 }
