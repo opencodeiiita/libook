@@ -1,1 +1,3 @@
 This is where the ideas come.
+
+Every time when we enter some title in addItem bar we have to remove previously entered title manually .So we can set it automatically to remove previously entered title.
