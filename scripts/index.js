@@ -10,13 +10,35 @@ let i = localStorage.length;
 updateList();
 
 function handleAdd(e){
+    var m;
     e.preventDefault();
-    localStorage.setItem(i, addTxt.value);
+    for (var j in localStorage) {
+        if (localStorage[j] === addTxt.value) {
+           
+            m=1;
+            break;
+        }
+    }
+        if(m==1){
+           
+            document.getElementById("dupli").innerHTML ="<div class='alert alert-danger'>Title already exists. </div>";
+            document.getElementById("success").innerHTML ="";
+        }
+        else{
+            document.getElementById("success").innerHTML ="<div class='alert alert-success'> Title added successfully </div>";
+            document.getElementById("dupli").innerHTML ="";
+            localStorage.setItem(i, addTxt.value);
+            if(localStorage.length ==1) titles.removeChild(titleMessage);
+            insertCard(addTxt.value);
+            addTxt.value="";
+            i++;
+        }
+   // localStorage.setItem(i, addTxt.value);
     //Removing 'Your title will appear here' message after first input
-    if(localStorage.length ==1) titles.removeChild(titleMessage);
-    insertCard(addTxt.value);
-    addTxt.value="";
-    i++;
+   // if(localStorage.length ==1) titles.removeChild(titleMessage);
+   // insertCard(addTxt.value);
+    //addTxt.value="";
+    //i++;
     console.log(localStorage);
 }
 
