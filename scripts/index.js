@@ -1,12 +1,9 @@
 const addBtn = document.getElementById("add-btn");
 var m=0;
 const addTxt = document.getElementById("add-txt");
-const searchBtn = document.getElementById("search-btn");
-const searchTxt = document.getElementById("search-text");
 const titles = document.getElementById("titles");
 const titleMessage = document.getElementById("title-message");
 addBtn.addEventListener('click', handleAdd);
-searchBtn.addEventListener('click',handleSearch);
 let i = localStorage.length;
 updateList();
 
