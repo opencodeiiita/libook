@@ -1,0 +1,4 @@
+Error-1: Stray end tag h1 in line 29.
+Error-2: In line 68, there is a spelling error of "bootstrap" as "bootsrap"
+Warning: Consider adding a lang attribute to the html start tag to declare the language of this document.
+From line 1, column 16; to line 2, column 6
