@@ -38,14 +38,15 @@ function handleAdd(e){
     }
     else
     {
+        console.log()
         document.getElementById("add-txt").blur();
-        document.querySelector('.form-control-title').classList.add('active');
-        setTimeout(RemoveClass, 1500);
-        document.querySelector('.alert').textContent="BLANK!!";
+        addTxt.classList.add('active');
+        setTimeout(RemoveClass, 1000);
+        addTxt.placeholder="Cannot Be Blank!!!!";
         function RemoveClass() {
         document.getElementById("add-txt").focus();
-        document.querySelector('.form-control-title').classList.remove('active');
-        document.querySelector('.alert').textContent="";
+        addTxt.classList.remove('active');
+        addTxt.placeholder="Enter title";
 
         }
     }
