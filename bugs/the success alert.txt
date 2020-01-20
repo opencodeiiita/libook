@@ -1,0 +1,1 @@
+The success alert box is visible for the whole time after one adds the item. Even when searching. It should dissapear after sometime.
