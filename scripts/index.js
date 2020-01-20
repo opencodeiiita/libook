@@ -7,39 +7,55 @@ const titleMessage = document.getElementById("title-message");
 addBtn.addEventListener('click', handleAdd);
 searchBtn.addEventListener('click',handleSearch);
 let i = localStorage.length;
+
 updateList();
 
 function handleAdd(e){
     var m;
     e.preventDefault();
-    for (var j in localStorage) {
-        if (localStorage[j] === addTxt.value) {
-           
-            m=1;
-            break;
+    if(addTxt.value!==''){
+        for (var j in localStorage) {
+            if (localStorage[j] === addTxt.value) {
+               
+                m=1;
+                break;
+            }
+        }
+            if(m==1){
+               
+                document.getElementById("dupli").innerHTML ="<div class='alert alert-danger'>Title already exists. </div>";
+                document.getElementById("success").innerHTML ="";
+            }
+            else{
+                document.getElementById("success").innerHTML ="<div class='alert alert-success'> Title added successfully </div>";
+                document.getElementById("dupli").innerHTML ="";
+                localStorage.setItem(i, addTxt.value);
+                if(localStorage.length ==1) titles.removeChild(titleMessage);
+                insertCard(addTxt.value);
+                addTxt.value="";
+                i++;
+            }
+    }
+    else
+    {
+        document.getElementById("add-txt").blur();
+        document.querySelector('.form-control-title').classList.add('active');
+        setTimeout(RemoveClass, 1500);
+        document.querySelector('.alert').textContent="BLANK!!";
+        function RemoveClass() {
+        document.getElementById("add-txt").focus();
+        document.querySelector('.form-control-title').classList.remove('active');
+        document.querySelector('.alert').textContent="";
+
         }
     }
-        if(m==1){
-           
-            document.getElementById("dupli").innerHTML ="<div class='alert alert-danger'>Title already exists. </div>";
-            document.getElementById("success").innerHTML ="";
-        }
-        else{
-            document.getElementById("success").innerHTML ="<div class='alert alert-success'> Title added successfully </div>";
-            document.getElementById("dupli").innerHTML ="";
-            localStorage.setItem(i, addTxt.value);
-            if(localStorage.length ==1) titles.removeChild(titleMessage);
-            insertCard(addTxt.value);
-            addTxt.value="";
-            i++;
-        }
    // localStorage.setItem(i, addTxt.value);
     //Removing 'Your title will appear here' message after first input
    // if(localStorage.length ==1) titles.removeChild(titleMessage);
    // insertCard(addTxt.value);
     //addTxt.value="";
     //i++;
-    console.log(localStorage);
+    // console.log(localStorage);
 }
 
 function handleSearch(e){

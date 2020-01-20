@@ -13,3 +13,19 @@ footer {
     position: relative;
     min-height: 100vh;
 }
+
+.form-control-title {
+    border: 0px solid;
+    width: 200px;
+    height: 40px;
+}
+
+.active {
+    border: 3px solid #ff0000 !important;
+}
+
+.alert {
+    color: #f70000;
+    font-style: italic;
+    transition: 0.5s;
+}
