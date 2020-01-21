@@ -39,17 +39,17 @@ function handleAdd(e){
             addTxt.value="";
             i++;
         }
-    else
-    {
-        console.log()
-        document.getElementById("add-txt").blur();
-        addTxt.classList.add('active');
-        setTimeout(RemoveClass, 1000);
-        addTxt.placeholder="Cannot Be Blank!!!!";
-        function RemoveClass() {
-        document.getElementById("add-txt").focus();
-        addTxt.classList.remove('active');
-        addTxt.placeholder="Enter title";
+//     else
+//     {
+//         console.log()
+//         document.getElementById("add-txt").blur();
+//         addTxt.classList.add('active');
+//         setTimeout(RemoveClass, 1000);
+//         addTxt.placeholder="Cannot Be Blank!!!!";
+//         function RemoveClass() {
+//         document.getElementById("add-txt").focus();
+//         addTxt.classList.remove('active');
+//         addTxt.placeholder="Enter title";
 
 
         }
