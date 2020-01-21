@@ -23,10 +23,12 @@ function handleAdd(e){
            
             document.getElementById("dupli").innerHTML ="<div class='alert alert-danger'>Title already exists. </div>";
             document.getElementById("success").innerHTML ="";
+            setTimeout(function() {document.getElementById('dupli').innerHTML='';},3000);
         }
         else{
             document.getElementById("success").innerHTML ="<div class='alert alert-success'> Title added successfully </div>";
             document.getElementById("dupli").innerHTML ="";
+            setTimeout(function() {document.getElementById('success').innerHTML='';},3000);
             localStorage.setItem(i, addTxt.value);
             if(localStorage.length ==1) titles.removeChild(titleMessage);
             insertCard(addTxt.value);
