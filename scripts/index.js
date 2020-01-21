@@ -21,21 +21,8 @@ function handleAdd(e){
                 break;
             }
         }
-            if(m==1){
-               
-                document.getElementById("dupli").innerHTML ="<div class='alert alert-danger'>Title already exists. </div>";
-                document.getElementById("success").innerHTML ="";
-            }
-            else{
-                document.getElementById("success").innerHTML ="<div class='alert alert-success'> Title added successfully </div>";
-                document.getElementById("dupli").innerHTML ="";
-                localStorage.setItem(i, addTxt.value);
-                if(localStorage.length ==1) titles.removeChild(titleMessage);
-                insertCard(addTxt.value);
-                addTxt.value="";
-                i++;
-            }
-    }
+            
+    
         if(m==1){
            
             document.getElementById("dupli").innerHTML ="<div class='alert alert-danger'>Title already exists. </div>";
@@ -51,6 +38,7 @@ function handleAdd(e){
             insertCard(addTxt.value);
             addTxt.value="";
             i++;
+        }
     else
     {
         console.log()
