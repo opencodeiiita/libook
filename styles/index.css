@@ -13,3 +13,15 @@ footer {
     position: relative;
     min-height: 100vh;
 }
+
+.form-control {
+    border: 0px solid;
+    width: 200px;
+    height: 40px;
+}
+
+.active {
+    border: 2px solid #ff0000 !important;
+}
+
+
