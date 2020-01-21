@@ -61,7 +61,7 @@ function handleAdd(e){
     //addTxt.value="";
     //i++;
     // console.log(localStorage);
-}
+
 
 function handleSearch(e){
     e.preventDefault();
