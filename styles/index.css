@@ -24,4 +24,41 @@ footer {
     border: 2px solid #ff0000 !important;
 }
 
+/*#add-btn-2 {
+    margin-right: 100px;
+}*/
+/*#add-txt-2 {
+    margin-left: 100px;
+}
+*/
+.add-bundle {
+    /*position: relative;*/
+    width: 100%;
+}
+.but {
+    display: inline;
+    margin-top: 90px;
+    margin-left: 90px;
+}
 
+#add-txt-details {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-top: 6px;
+}
+/*#add-btn-3 {
+    padding-right: 110px;
+    padding-left: 100px;
+    margin-top: 6px;
+    text-align: center;
+}*/
+/*.display-5 {
+    text-align: right;
+}*/
+
+#add-btn {
+    margin-top: 20px;
+    margin-right: 500px;
+    padding-right: 500px;
+    padding-left: 500px;
+}

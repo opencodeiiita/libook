@@ -1,5 +1,8 @@
 const addBtn = document.getElementById("add-btn");
 const addTxt = document.getElementById("add-txt");
+const addAuthor = document.getElementById("add-txt-author");
+const addPages = document.getElementById("add-txt-pages");
+const addDetails = document.getElementById("add-txt-details");
 const searchBtn = document.getElementById("search-btn");
 const searchTxt = document.getElementById("search-text");
 const titles = document.getElementById("titles");
@@ -7,17 +10,33 @@ const titleMessage = document.getElementById("title-message");
 addBtn.addEventListener('click', handleAdd);
 searchBtn.addEventListener('click',handleSearch);
 let i = localStorage.length;
+// localStorage.clear();
+
 
 updateList();
 
+var Details=function(title,details,author,Pages,img,addTime,startTime,finishTime){
+    this.title=title;
+    this.details=details;
+    this.img=img;
+    this.addTime=addTime;
+    this.startTime=startTime;
+    this.finishTime=finishTime;
+    this.author=author;
+    this.Pages=Pages;
+}
+var Titles=[];
+
 function handleAdd(e){
-    var m;
+    var m,key,newTitle;
     e.preventDefault();
     if(addTxt.value!==''){
-        for (var j in localStorage) {
-            if (localStorage[j] === addTxt.value) {
+        for (var j=0;j<localStorage.length;j++) {
+            key=localStorage.key(j);
+            if ((JSON.parse(localStorage.getItem(key))).title === addTxt.value) {
                
                 m=1;
+                console.log('dsa');
                 break;
             }
         }
@@ -27,18 +46,23 @@ function handleAdd(e){
                 document.getElementById("success").innerHTML ="";
             }
             else{
+                
                 document.getElementById("success").innerHTML ="<div class='alert alert-success'> Title added successfully </div>";
                 document.getElementById("dupli").innerHTML ="";
-                localStorage.setItem(i, addTxt.value);
+                newTitle=new Details(addTxt.value,addDetails.value,addAuthor.value,addPages.value)
+                localStorage.setItem(newTitle.title, JSON.stringify(newTitle));
+
                 if(localStorage.length ==1) titles.removeChild(titleMessage);
-                insertCard(addTxt.value);
+                insertCard(newTitle.title);
                 addTxt.value="";
-                i++;
+                addAuthor.value="";
+                addDetails.value="";
+                addPages.value="";
+
             }
     }
     else
     {
-        console.log()
         document.getElementById("add-txt").blur();
         addTxt.classList.add('active');
         setTimeout(RemoveClass, 1000);
@@ -83,8 +107,9 @@ function handleSearch(e){
 function updateList(){
 
     if(localStorage.length > 0) titles.removeChild(titleMessage);
-    for(let j = 0; j < localStorage.length; j++){
-        insertCard(localStorage.getItem(j));
+    for(var j = localStorage.length-1; j >=0; j--){
+        var key=localStorage.key(j);
+        insertCard((JSON.parse(localStorage.getItem(key))).title);
     }
 }
 

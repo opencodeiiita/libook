@@ -35,25 +35,36 @@
     </div>
     <br>
     <div class="jumbotron">
+
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
-            <h1 class="display-5">Add Items</h1>
-            <p>This is to manage your progress</p>
+            <h1 class="display-5">Add Books</h1>
+            <br><br>
+            <!-- <p>This is to manage your progress</p> -->
             <form action="#" class="form-inline" >
-              <input id= "add-txt" type="text" class="form-control" placeholder="Enter title" autocomplete="off">
-              <button id="add-btn" class="btn btn-outline-success ml-2" type="submit">Add</button>
-
+              <br>
+              <div class="add-bundle">
+              <input id= "add-txt" type="text" class="form-control" placeholder="Enter Title" autocomplete="off">
+              </div>
+              <div class="add-bundle">
+              <input id= "add-txt-author" type="text" class="form-control" placeholder="Author" autocomplete="off">
+              </div>
+              <div class="add-bundle">            
+              <input id= "add-txt-pages" type="text" class="form-control" placeholder="No. of Pages" autocomplete="off">
+              </div>            
             </form>
-            <div class="alert"></div>
           </div>
+          <div class="but col-sm-3">
+            <input id= "add-txt-details" type="text" class="form-control" placeholder="Details" autocomplete="off">
 
-
-          <div class="col-sm-6">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias officiis atque eveniet dignissimos, nisi, corrupti nam dolorem autem fugit porro nesciunt eaque, cum numquam temporibus. Provident optio nemo quas consequuntur.
           </div>
+          <button id="add-btn" class="btn btn-outline-success ml-2" type="submit">Add</button>
         </div>
+
+
       </div>
+
     </div>
 	  <div class="container" id="dupli">
 
