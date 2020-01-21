@@ -1,3 +1,5 @@
 This is where the ideas come.
 
 Every time when we enter some title in addItem bar we have to remove previously entered title manually .So we can set it automatically to remove previously entered title.
+
+Just like the filters in Add box we can also add those filters in search box. That is preveting blanck search,displaying success or error messages on screen
