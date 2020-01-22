@@ -41,25 +41,25 @@ function handleAdd(e){
                 }
             }
         }
+
             if(m==1){
                
                 document.getElementById("dupli").innerHTML ="<div class='alert alert-danger'>Title already exists. </div>";
                 document.getElementById("success").innerHTML ="";
+                setTimeout(function() {document.getElementById('dupli').innerHTML='';},3000);
             }
             else{
                 
                 document.getElementById("success").innerHTML ="<div class='alert alert-success'> Title added successfully </div>";
                 document.getElementById("dupli").innerHTML ="";
+                setTimeout(function() {document.getElementById('success').innerHTML='';},3000);
                 newTitle=new Details(addTxt.value,addDetails.value,addAuthor.value);
                 localStorage.setItem(newTitle.title, JSON.stringify(newTitle));
-
                 if(localStorage.length ==1) titles.removeChild(titleMessage);
                 insertCard(newTitle.title);
                 addTxt.value="";
                 addAuthor.value="";
                 addDetails.value="";
-
-
             }
     }
     else
@@ -74,14 +74,7 @@ function handleAdd(e){
         addTxt.placeholder="Enter title";
 
         }
-    }
-   // localStorage.setItem(i, addTxt.value);
-    //Removing 'Your title will appear here' message after first input
-   // if(localStorage.length ==1) titles.removeChild(titleMessage);
-   // insertCard(addTxt.value);
-    //addTxt.value="";
-    //i++;
-    // console.log(localStorage);
+        }
 }
 
 function handleSearch(e){
