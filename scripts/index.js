@@ -29,7 +29,7 @@ function handleAdd(e){
             document.getElementById("success").innerHTML ="";
             setTimeout(function() {document.getElementById('dupli').innerHTML='';},3000);
         }
-        else{
+        else if(m!=1){
             document.getElementById("success").innerHTML ="<div class='alert alert-success'> Title added successfully </div>";
             document.getElementById("dupli").innerHTML ="";
             setTimeout(function() {document.getElementById('success').innerHTML='';},3000);
