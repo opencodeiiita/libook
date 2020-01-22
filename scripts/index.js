@@ -29,7 +29,7 @@ function handleAdd(e){
             document.getElementById("success").innerHTML ="";
             setTimeout(function() {document.getElementById('dupli').innerHTML='';},3000);
         }
-        else if(m!=1){
+        else {
             document.getElementById("success").innerHTML ="<div class='alert alert-success'> Title added successfully </div>";
             document.getElementById("dupli").innerHTML ="";
             setTimeout(function() {document.getElementById('success').innerHTML='';},3000);
@@ -39,6 +39,7 @@ function handleAdd(e){
             addTxt.value="";
             i++;
         }
+    }
     else
     {
         console.log()
@@ -53,7 +54,7 @@ function handleAdd(e){
 
         }
         }
-    }
+}
    // localStorage.setItem(i, addTxt.value);
     //Removing 'Your title will appear here' message after first input
    // if(localStorage.length ==1) titles.removeChild(titleMessage);
