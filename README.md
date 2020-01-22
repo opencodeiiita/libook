@@ -1,4 +1,4 @@
-!! The storage has undergone method some changes, clear local storage before use !!
+!! The storage method has undergone some changes, clear local storage before use !!
 
 # Libook
 
