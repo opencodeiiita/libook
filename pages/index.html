@@ -17,8 +17,10 @@
     <link rel="stylesheet" type="text/css" href="../styles/bootstrap-css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../styles/bootstrap-css/bootstrap-grid.min.css">
     <link rel="stylesheet" type="text/css" href="../styles/bootstrap-css/bootstrap-reboot.min.css">
-  <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    
+    <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 	  <link rel="shortcut icon" href="../resources/img/favicon.ico"/>
+    
     <!-- Title -->
     <title>Libook</title>
   </head>
@@ -35,71 +37,56 @@
     </div>
     <br>
     <div class="jumbotron">
-
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
             <h1 class="display-5">Add Books</h1>
-            <br><br>
-            <!-- <p>This is to manage your progress</p> -->
-            <form action="#" class="form-inline" >
-              <br>
-              <div class="add-bundle">
-                <input id= "add-txt" type="text" class="form-control" placeholder="Enter Title" autocomplete="off"> 
-              </div>
-              <div class="add-bundle">
+            <p>This is to manage your progress</p> 
+            <div class="mb-1">
+              <input id= "add-txt" type="text" class="form-control" placeholder="Enter Title" autocomplete="off"> 
+            </div>
+            <div class="mb-1">
               <input id= "add-txt-author" type="text" class="form-control" placeholder="Enter Author" autocomplete="off">
-              </div>
-
-
-              <div class="add-bundle">            
-              <input id= "add-txt-details" type="text" class="form-control" placeholder="Enter Summary" autocomplete="off">
-              </div>
-              <button id="add-btn" class="btn btn-outline-success ml-2" type="submit">Add</button>            
-            </form>
+            </div>
+            <div class="mb-1">            
+              <textarea id= "add-txt-details" style="height: 200px; resize:none;" type="text" class="form-control" placeholder="Enter Summary" autocomplete="off"></textarea>
+            </div>
+            <button id="add-btn" class="btn btn-block btn-outline-success" type="submit">Add</button>            
           </div>
-
-
           <div class="col-sm-6">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias officiis atque eveniet dignissimos, nisi, corrupti nam dolorem autem fugit porro nesciunt eaque, cum numquam temporibus. Provident optio nemo quas consequuntur.
-
+            <br><br><br><br>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias officiis atque eveniet dignissimos, nisi, corrupti nam dolorem autem fugit porro nesciunt eaque, cum numquam temporibus. Provident optio nemo quas consequuntur.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias officiis atque eveniet dignissimos, nisi, corrupti nam dolorem autem fugit porro nesciunt eaque, cum numquam temporibus. Provident optio nemo quas consequuntur.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias officiis atque eveniet dignissimos, nisi, corrupti nam dolorem autem fugit porro nesciunt eaque, cum numquam temporibus. Provident optio nemo quas consequuntur.</p>
           </div>
         </div>
-
-
       </div>
-
     </div>
-	  <div class="container" id="dupli">
-
-      
-          </div>
-          <div class="container" id="success">
-            
-          </div>
+	  <div class="container" id="dupli"></div>
+    <div class="container" id="success"></div>
     <div class="container" >
       <div id="titles" class="card-list">
         <div id="title-message" class="card">
           <div class="card-body text-center">
             Your titles will appear here
           </div>
-
         </div>
       </div>
     </div>
     <div style="color:white">as</div>
     <div style="color:white">as</div>
+    
     <!-- Scripts -->
     <!-- jQuery Script -->
     <script type="../scripts/bootstrap-js/jquery-3.4.1.js"></script>
-
+    <!--Custom Scripts-->
     <script src="../scripts/index.js"></script>
     <!-- Bootstrap Script -->
     <script src= "../scripts/bootstrap-js/bootstrap.min.js"></script>
+    
     <!-- Footer -->
     <footer>
       <div style="text-align:center">
-
         <span style="float:left;">
         <b>   LiBook</b> <i>made by</i> <b >GeekHaven.  </b>
         </span>
@@ -109,8 +96,5 @@
         <i>© OpenCode Participants</i>
       </div>
     </footer>
-
-
   </body>
 </html>
-

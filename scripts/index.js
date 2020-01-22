@@ -34,47 +34,41 @@ function handleAdd(e){
             {
                 key=localStorage.key(j);
                 if ((JSON.parse(localStorage.getItem(key))).title === addTxt.value) {
-                   
                     m=1;
                     console.log('dsa');
                     break;
                 }
             }
         }
-
-            if(m==1){
-               
-                document.getElementById("dupli").innerHTML ="<div class='alert alert-danger'>Title already exists. </div>";
-                document.getElementById("success").innerHTML ="";
-                setTimeout(function() {document.getElementById('dupli').innerHTML='';},3000);
-            }
-            else{
-                
-                document.getElementById("success").innerHTML ="<div class='alert alert-success'> Title added successfully </div>";
-                document.getElementById("dupli").innerHTML ="";
-                setTimeout(function() {document.getElementById('success').innerHTML='';},3000);
-                newTitle=new Details(addTxt.value,addDetails.value,addAuthor.value);
-                localStorage.setItem(newTitle.title, JSON.stringify(newTitle));
-                if(localStorage.length ==1) titles.removeChild(titleMessage);
-                insertCard(newTitle.title);
-                addTxt.value="";
-                addAuthor.value="";
-                addDetails.value="";
-            }
+        if(m==1){
+            document.getElementById("dupli").innerHTML ="<div class='alert alert-danger'>Title already exists. </div>";
+            document.getElementById("success").innerHTML ="";
+            setTimeout(function() {document.getElementById('dupli').innerHTML='';},3000);
+        }
+        else{      
+            document.getElementById("success").innerHTML ="<div class='alert alert-success'> Title added successfully </div>";
+            document.getElementById("dupli").innerHTML ="";
+            setTimeout(function() {document.getElementById('success').innerHTML='';},3000);
+            newTitle=new Details(addTxt.value,addDetails.value,addAuthor.value);
+            localStorage.setItem(newTitle.title, JSON.stringify(newTitle));
+            if(localStorage.length ==1) titles.removeChild(titleMessage);
+            insertCard(newTitle.title);
+            addTxt.value="";
+            addAuthor.value="";
+            addDetails.value="";
+        }
     }
-    else
-    {
+    else{
         document.getElementById("add-txt").blur();
         addTxt.classList.add('active');
         setTimeout(RemoveClass, 1000);
-        addTxt.placeholder="Cannot Be Blank!!!!";
+        addTxt.placeholder="Title Cannot Be Blank";
         function RemoveClass() {
-        document.getElementById("add-txt").focus();
-        addTxt.classList.remove('active');
-        addTxt.placeholder="Enter title";
-
+            document.getElementById("add-txt").focus();
+            addTxt.classList.remove('active');
+            addTxt.placeholder="Enter title";
         }
-        }
+    }
 }
 
 function handleSearch(e){
@@ -100,7 +94,6 @@ function handleSearch(e){
 }
 
 function updateList(){
-
     if(localStorage.length > 0) 
     {
         titles.removeChild(titleMessage);
@@ -112,7 +105,6 @@ function updateList(){
 }
 
 function insertCard(text){
-
     let myCard = document.createElement('div');
         myCard.className = "card";
         let myCardBody = document.createElement('div');
