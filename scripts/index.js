@@ -1,5 +1,7 @@
 const addBtn = document.getElementById("add-btn");
 const addTxt = document.getElementById("add-txt");
+const addAuthor = document.getElementById("add-txt-author");
+const addDetails = document.getElementById("add-txt-details");
 const searchBtn = document.getElementById("search-btn");
 const searchTxt = document.getElementById("search-text");
 const titles = document.getElementById("titles");
@@ -8,41 +10,60 @@ addBtn.addEventListener('click', handleAdd);
 searchBtn.addEventListener('click',handleSearch);
 let i = localStorage.length;
 
+
 updateList();
 
+var Details=function(title,details,author,Pages,img,addTime,startTime,finishTime){
+    this.title=title;
+    this.details=details;
+    this.img=img;
+    this.addTime=addTime;
+    this.startTime=startTime;
+    this.finishTime=finishTime;
+    this.author=author;
+    this.Pages=Pages;
+}
+var Titles=[];
+
 function handleAdd(e){
-    var m;
+    var m,key,newTitle;
     e.preventDefault();
     if(addTxt.value!==''){
-        for (var j in localStorage) {
-            if (localStorage[j] === addTxt.value) {
-               
-                m=1;
-                break;
+        for (var j=0;j<localStorage.length;j++) {
+            if(localStorage.length>0)
+            {
+                key=localStorage.key(j);
+                if ((JSON.parse(localStorage.getItem(key))).title === addTxt.value) {
+                   
+                    m=1;
+                    console.log('dsa');
+                    break;
+                }
             }
         }
-            
-    
-        if(m==1){
-           
-            document.getElementById("dupli").innerHTML ="<div class='alert alert-danger'>Title already exists. </div>";
-            document.getElementById("success").innerHTML ="";
-            setTimeout(function() {document.getElementById('dupli').innerHTML='';},3000);
-        }
-        else {
-            document.getElementById("success").innerHTML ="<div class='alert alert-success'> Title added successfully </div>";
-            document.getElementById("dupli").innerHTML ="";
-            setTimeout(function() {document.getElementById('success').innerHTML='';},3000);
-            localStorage.setItem(i, addTxt.value);
-            if(localStorage.length ==1) titles.removeChild(titleMessage);
-            insertCard(addTxt.value);
-            addTxt.value="";
-            i++;
-        }
+
+            if(m==1){
+               
+                document.getElementById("dupli").innerHTML ="<div class='alert alert-danger'>Title already exists. </div>";
+                document.getElementById("success").innerHTML ="";
+                setTimeout(function() {document.getElementById('dupli').innerHTML='';},3000);
+            }
+            else{
+                
+                document.getElementById("success").innerHTML ="<div class='alert alert-success'> Title added successfully </div>";
+                document.getElementById("dupli").innerHTML ="";
+                setTimeout(function() {document.getElementById('success').innerHTML='';},3000);
+                newTitle=new Details(addTxt.value,addDetails.value,addAuthor.value);
+                localStorage.setItem(newTitle.title, JSON.stringify(newTitle));
+                if(localStorage.length ==1) titles.removeChild(titleMessage);
+                insertCard(newTitle.title);
+                addTxt.value="";
+                addAuthor.value="";
+                addDetails.value="";
+            }
     }
     else
     {
-        console.log()
         document.getElementById("add-txt").blur();
         addTxt.classList.add('active');
         setTimeout(RemoveClass, 1000);
@@ -55,25 +76,18 @@ function handleAdd(e){
         }
         }
 }
-   // localStorage.setItem(i, addTxt.value);
-    //Removing 'Your title will appear here' message after first input
-   // if(localStorage.length ==1) titles.removeChild(titleMessage);
-   // insertCard(addTxt.value);
-    //addTxt.value="";
-    //i++;
-    // console.log(localStorage);
-
 
 function handleSearch(e){
     e.preventDefault();
     var str = searchTxt.value;
     var arr = new Array();
     for(let j = 0; j < localStorage.length; j++){
-      var str2=localStorage.getItem(j);
-      var re = new RegExp(str,"gi");
-      if(re.test(str2)){
-        arr.push(str2);
-      }
+        var key=localStorage.key(j);
+        var str2=(JSON.parse(localStorage.getItem(key))).title;
+        var re = new RegExp(str,"gi");
+        if(re.test(str2)){
+            arr.push(str2);
+        }
     }
     var child = titles.lastElementChild;
         while (child) {
@@ -87,9 +101,13 @@ function handleSearch(e){
 
 function updateList(){
 
-    if(localStorage.length > 0) titles.removeChild(titleMessage);
-    for(let j = 0; j < localStorage.length; j++){
-        insertCard(localStorage.getItem(j));
+    if(localStorage.length > 0) 
+    {
+        titles.removeChild(titleMessage);
+        for(var j = 0; j <localStorage.length; j++){
+            var key=localStorage.key(j);
+            insertCard((JSON.parse(localStorage.getItem(key))).title);
+        }
     }
 }
 
