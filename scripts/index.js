@@ -28,7 +28,7 @@ var Titles=[];
 function handleAdd(e){
     var m,key,newTitle;
     e.preventDefault();
-    if(addTxt.value!==''){
+    if(addTxt.value!=='' && addAuthor.value!=='' && addDetails.value!==''){
         for (var j=0;j<localStorage.length;j++) {
             if(localStorage.length>0)
             {
@@ -59,15 +59,23 @@ function handleAdd(e){
         }
     }
     else{
-        document.getElementById("add-txt").blur();
-        addTxt.classList.add('active');
-        setTimeout(RemoveClass, 1000);
-        addTxt.placeholder="Title Cannot Be Blank";
-        function RemoveClass() {
-            document.getElementById("add-txt").focus();
-            addTxt.classList.remove('active');
-            addTxt.placeholder="Enter title";
-        }
+        if(addTxt.value==='') handleEmpty(addTxt);
+        if(addAuthor.value==='') handleEmpty(addAuthor);
+        if(addDetails.value==='') handleEmpty(addDetails);
+    }
+}
+
+function handleEmpty(elem) {
+    elem.blur();
+    elem.classList.add('active');
+    setTimeout(RemoveClass, 1000);
+    elem.placeholder="Cannot Be Blank";
+    function RemoveClass() {
+        elem.focus();
+        elem.classList.remove('active');
+        if(elem===addTxt) elem.placeholder="Enter Title";
+        if(elem===addAuthor) elem.placeholder="Enter Author";
+        if(elem===addDetails) elem.placeholder="Enter Summary";
     }
 }
 
