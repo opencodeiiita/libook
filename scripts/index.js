@@ -96,8 +96,16 @@ function handleSearch(e){
             titles.removeChild(child);
             child = titles.lastElementChild;
         }
-    for(let k = 0; k < arr.length; k++){
-        insertCard(arr[k]);
+    if(arr.length == 0){
+        document.getElementById("dupli").innerHTML ="<div class='alert alert-danger'>No Results Found</div>";
+        document.getElementById("success").innerHTML ="";
+        }
+    else{
+        document.getElementById("dupli").innerHTML ="";
+        document.getElementById("success").innerHTML ="";
+        for(let k = 0; k < arr.length; k++){
+            insertCard(arr[k]);
+        }
     }
 }
 
@@ -121,3 +129,4 @@ function insertCard(text){
         myCard.appendChild(myCardBody);
         titles.appendChild(myCard);
 }
+
