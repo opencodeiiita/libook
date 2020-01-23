@@ -33,10 +33,14 @@ function handleAdd(e){
             if(localStorage.length>0)
             {
                 key=localStorage.key(j);
-                if ((JSON.parse(localStorage.getItem(key))).title === addTxt.value) {
-                    m=1;
-                    console.log('dsa');
-                    break;
+                try{
+                    if ((JSON.parse(localStorage.getItem(key))).title === addTxt.value) {
+                        m=1;
+                        console.log('dsa');
+                        break;
+                    }
+                } catch (error){
+                    console.log(error);
                 }
             }
         }
@@ -85,10 +89,14 @@ function handleSearch(e){
     var arr = new Array();
     for(let j = 0; j < localStorage.length; j++){
         var key=localStorage.key(j);
-        var str2=(JSON.parse(localStorage.getItem(key))).title;
-        var re = new RegExp(str,"gi");
-        if(re.test(str2)){
-            arr.push(str2);
+        try {
+            var str2=(JSON.parse(localStorage.getItem(key))).title;
+            var re = new RegExp(str,"gi");
+            if(re.test(str2)){
+                arr.push(str2);
+            }
+        } catch (error){
+            console.log(error);
         }
     }
     var child = titles.lastElementChild;
@@ -115,7 +123,11 @@ function updateList(){
         titles.removeChild(titleMessage);
         for(var j = 0; j <localStorage.length; j++){
             var key=localStorage.key(j);
-            insertCard((JSON.parse(localStorage.getItem(key))).title);
+            try {
+                insertCard((JSON.parse(localStorage.getItem(key))).title);
+            } catch (error){
+                console.log(error);
+            }
         }
     }
 }
