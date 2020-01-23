@@ -19,8 +19,8 @@
     <link rel="stylesheet" type="text/css" href="../styles/bootstrap-css/bootstrap-reboot.min.css">
     
     <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-	  <link rel="shortcut icon" href="../resources/img/favicon.ico"/>
-    
+    <link rel="shortcut icon" href="../resources/img/favicon.ico"/>
+
     <!-- Title -->
     <title>Libook</title>
   </head>
@@ -40,7 +40,15 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
-            <h1 class="display-5">Add Books</h1>
+          <h1 class="display-5">Add Books</h1>
+          </div>
+          <div class="col-sm-6">
+          <a data-toggle="collapse" style="float: right;" href="#addbooks"><img width="32px" height="32px" style="margin-top: 10px;" src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519691-199_CircledPlus-256.png"/></a>
+          </div>
+        </div>
+        <div class="collapse" id="addbooks">
+        <div class="row">
+          <div class="col-sm-6">
             <p>This is to manage your progress</p> 
             <div class="mb-1">
               <input id= "add-txt" type="text" class="form-control" placeholder="Enter Title" autocomplete="off"> 
@@ -54,11 +62,11 @@
             <button id="add-btn" class="btn btn-block btn-outline-success" type="submit">Add</button>            
           </div>
           <div class="col-sm-6">
-            <br><br><br><br>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias officiis atque eveniet dignissimos, nisi, corrupti nam dolorem autem fugit porro nesciunt eaque, cum numquam temporibus. Provident optio nemo quas consequuntur.</p>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias officiis atque eveniet dignissimos, nisi, corrupti nam dolorem autem fugit porro nesciunt eaque, cum numquam temporibus. Provident optio nemo quas consequuntur.</p>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias officiis atque eveniet dignissimos, nisi, corrupti nam dolorem autem fugit porro nesciunt eaque, cum numquam temporibus. Provident optio nemo quas consequuntur.</p>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -78,7 +86,7 @@
     
     <!-- Scripts -->
     <!-- jQuery Script -->
-    <script type="../scripts/bootstrap-js/jquery-3.4.1.js"></script>
+    <script src="../scripts/bootstrap-js/jquery-3.4.1.min.js"></script>
     <!--Custom Scripts-->
     <script src="../scripts/index.js"></script>
     <!-- Bootstrap Script -->
