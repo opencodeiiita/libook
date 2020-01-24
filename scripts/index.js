@@ -6,9 +6,12 @@ const searchBtn = document.getElementById("search-btn");
 const searchTxt = document.getElementById("search-text");
 const titles = document.getElementById("titles");
 const titleMessage = document.getElementById("title-message");
+const filter=document.getElementById("filter");
 addBtn.addEventListener('click', handleAdd);
 searchBtn.addEventListener('click',handleSearch);
+filter.addEventListener('click',handleFilter);
 let i = localStorage.length;
+var type;
 
 
 updateList();
@@ -82,19 +85,45 @@ function handleEmpty(elem) {
         if(elem===addDetails) elem.placeholder="Enter Summary";
     }
 }
+function handleFilter(e){
+    e.preventDefault();
+    var by,splitby;
+    by=e.target.id;
+    splitby=by.split('-');
+    type=(splitby[1]);
+    if(type==='title')
+        searchTxt.placeholder='Search Title';
+    else if(type==='author')
+        searchTxt.placeholder='Search Author';
+
+}
 
 function handleSearch(e){
     e.preventDefault();
+    if(!type)
+        type='title';
     var str = searchTxt.value;
     var arr = new Array();
     for(let j = 0; j < localStorage.length; j++){
         var key=localStorage.key(j);
         try {
-            var str2=(JSON.parse(localStorage.getItem(key))).title;
+            console.log(type);
+            var str1=(JSON.parse(localStorage.getItem(key))).title;
+            var str2=(JSON.parse(localStorage.getItem(key))).author; 
             var re = new RegExp(str,"gi");
-            if(re.test(str2)){
-                arr.push(str2);
+            if(type==='title')
+            {
+                if(re.test(str1)){
+                    arr.push(str1);
+                }
             }
+            else
+            {
+                if (re.test(str2)){
+                    arr.push(str1);
+                }
+            }
+
         } catch (error){
             console.log(error);
         }
