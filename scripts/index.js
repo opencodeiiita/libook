@@ -163,7 +163,7 @@ function updateList(){
         for(var j = 0; j <localStorage.length; j++){
             var key=localStorage.key(j);
             try {
-                insertCard((JSON.parse(localStorage.getItem(key))).title);
+                insertCard((JSON.parse(localStorage.getItem(key))).title,(JSON.parse(localStorage.getItem(key))).author,(JSON.parse(localStorage.getItem(key))).details);
             } catch (error){
                 console.log(error);
             }
@@ -171,13 +171,21 @@ function updateList(){
     }
 }
 
-function insertCard(text){
+function insertCard(title,author,text){
     let myCard = document.createElement('div');
         myCard.className = "card";
-        let myCardBody = document.createElement('div');
-        myCardBody.className = "card-body text-center";
+        let myCardHeader = document.createElement('div');
+        myCardHeader.className = "card-header";
+        myCardHeader.appendChild(document.createTextNode(title));
+    let myCardBody = document.createElement('div');
+        myCardBody.className = "card-body";
         myCardBody.appendChild(document.createTextNode(text));
+    let myCardFooter = document.createElement('div');
+        myCardFooter.className = "card-footer";
+        myCardFooter.appendChild(document.createTextNode(author));
+        myCard.appendChild(myCardHeader);
         myCard.appendChild(myCardBody);
+        myCard.appendChild(myCardFooter);
         titles.appendChild(myCard);
 }
 
