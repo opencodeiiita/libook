@@ -57,6 +57,10 @@ footer {
     background-color: #e9ecef;
 }
 
+.selected {
+    background-color: #434343 !important;
+}
+
 @media (max-width: 575px) {
     #filter {
         top: 74px;

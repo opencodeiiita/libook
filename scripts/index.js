@@ -92,9 +92,19 @@ function handleFilter(e){
     splitby=by.split('-');
     type=(splitby[1]);
     if(type==='title')
+    {
         searchTxt.placeholder='Search Title';
+        document.getElementById('drop-title').classList.remove('selected');
+        document.getElementById('drop-title').classList.add('selected');
+        document.getElementById('drop-author').classList.remove('selected');
+    }
     else if(type==='author')
+    {
         searchTxt.placeholder='Search Author';
+        document.getElementById('drop-title').classList.remove('selected');
+        document.getElementById('drop-author').classList.remove('selected');
+        document.getElementById('drop-author').classList.add('selected');
+    }
 
 }
 
