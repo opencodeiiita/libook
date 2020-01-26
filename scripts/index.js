@@ -175,13 +175,13 @@ function insertCard(title,author,text){
     let myCard = document.createElement('div');
         myCard.className = "card";
         let myCardHeader = document.createElement('div');
-        myCardHeader.className = "card-header";
+        myCardHeader.className = "card-header text-center";
         myCardHeader.appendChild(document.createTextNode(title));
     let myCardBody = document.createElement('div');
-        myCardBody.className = "card-body";
+        myCardBody.className = "card-body text-center";
         myCardBody.appendChild(document.createTextNode(text));
     let myCardFooter = document.createElement('div');
-        myCardFooter.className = "card-footer";
+        myCardFooter.className = "card-footer text-center";
         myCardFooter.appendChild(document.createTextNode(author));
         myCard.appendChild(myCardHeader);
         myCard.appendChild(myCardBody);
