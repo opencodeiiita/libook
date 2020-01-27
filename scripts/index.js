@@ -176,8 +176,12 @@ function insertCard(text){
         myCard.className = "card";
         let myCardBody = document.createElement('div');
         myCardBody.className = "card-body text-center";
-        myCardBody.appendChild(document.createTextNode(text));
+        let titleLink = document.createElement('a');
+        let titleText = document.createTextNode(text);
+        titleLink.href = "book.html?title="+text;
+        myCardBody.appendChild(titleText);
         myCard.appendChild(myCardBody);
-        titles.appendChild(myCard);
+        titleLink.appendChild(myCard);
+        titles.appendChild(titleLink);
 }
 
