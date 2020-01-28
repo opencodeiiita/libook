@@ -180,13 +180,20 @@ function insertCard(title,author,text){
         myCardHeader.appendChild(document.createTextNode(title));
     let myCardBody = document.createElement('div');
         myCardBody.className = "card-body text-center";
+
         myCardBody.appendChild(document.createTextNode(text));
     let myCardFooter = document.createElement('div');
         myCardFooter.className = "card-footer text-center";
         myCardFooter.appendChild(document.createTextNode(author));
+        let titleLink = document.createElement('a');
+        let titleText = document.createTextNode(text);
+        titleLink.href = "book.html?title="+text;
+        myCardBody.appendChild(titleText);
         myCard.appendChild(myCardHeader);
         myCard.appendChild(myCardBody);
         myCard.appendChild(myCardFooter);
         titles.appendChild(myCard);
+        titleLink.appendChild(myCard);
+        titles.appendChild(titleLink);
 }
 
