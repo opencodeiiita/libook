@@ -58,8 +58,9 @@ function handleAdd(e){
             setTimeout(function() {document.getElementById('success').innerHTML='';},3000);
             newTitle=new Details(addTxt.value,addDetails.value,addAuthor.value);
             localStorage.setItem(newTitle.title, JSON.stringify(newTitle));
-            if(localStorage.length ==1) titles.removeChild(titleMessage);
-            insertCard(newTitle.title);
+            if(localStorage.length ==1) 
+                titles.removeChild(titleMessage);
+            insertCard(newTitle.title, newTitle.details,newTitle.author);
             addTxt.value="";
             addAuthor.value="";
             addDetails.value="";
