@@ -58,8 +58,9 @@ function handleAdd(e){
             setTimeout(function() {document.getElementById('success').innerHTML='';},3000);
             newTitle=new Details(addTxt.value,addDetails.value,addAuthor.value);
             localStorage.setItem(newTitle.title, JSON.stringify(newTitle));
-            if(localStorage.length ==1) titles.removeChild(titleMessage);
-            insertCard(newTitle.title);
+            if(localStorage.length ==1) 
+                titles.removeChild(titleMessage);
+            insertCard(newTitle.title, newTitle.details,newTitle.author);
             addTxt.value="";
             addAuthor.value="";
             addDetails.value="";
@@ -163,7 +164,7 @@ function updateList(){
         for(var j = 0; j <localStorage.length; j++){
             var key=localStorage.key(j);
             try {
-                insertCard((JSON.parse(localStorage.getItem(key))).title);
+                insertCard((JSON.parse(localStorage.getItem(key))).title,(JSON.parse(localStorage.getItem(key))).author,(JSON.parse(localStorage.getItem(key))).details);
             } catch (error){
                 console.log(error);
             }
@@ -171,16 +172,27 @@ function updateList(){
     }
 }
 
-function insertCard(text){
+function insertCard(title,author,text){
     let myCard = document.createElement('div');
         myCard.className = "card";
-        let myCardBody = document.createElement('div');
+        let myCardHeader = document.createElement('div');
+        myCardHeader.className = "card-header text-center";
+        myCardHeader.appendChild(document.createTextNode(title));
+    let myCardBody = document.createElement('div');
         myCardBody.className = "card-body text-center";
+
+        myCardBody.appendChild(document.createTextNode(text));
+    let myCardFooter = document.createElement('div');
+        myCardFooter.className = "card-footer text-center";
+        myCardFooter.appendChild(document.createTextNode(author));
         let titleLink = document.createElement('a');
         let titleText = document.createTextNode(text);
         titleLink.href = "book.html?title="+text;
         myCardBody.appendChild(titleText);
+        myCard.appendChild(myCardHeader);
         myCard.appendChild(myCardBody);
+        myCard.appendChild(myCardFooter);
+        titles.appendChild(myCard);
         titleLink.appendChild(myCard);
         titles.appendChild(titleLink);
 }
