@@ -181,7 +181,6 @@ function insertCard(title,author,text){
     let myCardBody = document.createElement('div');
         myCardBody.className = "card-body text-center";
 
-        myCardBody.appendChild(document.createTextNode(text));
     let myCardFooter = document.createElement('div');
         myCardFooter.className = "card-footer text-center";
         myCardFooter.appendChild(document.createTextNode(author));

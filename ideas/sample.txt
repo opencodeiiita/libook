@@ -6,3 +6,6 @@ Just like the filters in Add box we can also add those filters in search box. Th
 
 
 We can Add a option for search -"Search by" option  which give option to user search by title or author(or something else)
+
+
+We can add delete option in title.
