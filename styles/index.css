@@ -71,3 +71,25 @@ footer {
 .card{
     color: #434343;
 }
+
+#prev:hover {
+    cursor: pointer;
+}
+
+#next:hover {
+    cursor: pointer;
+}
+
+#page_num[type="text"] {
+    width: 30px;
+    height: 24px;
+    text-align: center;
+}
+
+.page_c {
+    font-size: 18px;
+}
+
+.page_controls {
+    margin-bottom: 1em;
+}
