@@ -121,17 +121,18 @@ function handleSearch(e){
             console.log(type);
             var str1=(JSON.parse(localStorage.getItem(key))).title;
             var str2=(JSON.parse(localStorage.getItem(key))).author; 
+            var str3=(JSON.parse(localStorage.getItem(key))).details; 
             var re = new RegExp(str,"gi");
             if(type==='title')
             {
                 if(re.test(str1)){
-                    arr.push(str1);
+                    arr.push({title: str1, author: str2, details: str3});
                 }
             }
             else
             {
                 if (re.test(str2)){
-                    arr.push(str1);
+                    arr.push({title: str1, author: str2, details: str3});
                 }
             }
 
@@ -152,7 +153,7 @@ function handleSearch(e){
         document.getElementById("dupli").innerHTML ="";
         document.getElementById("success").innerHTML ="";
         for(let k = 0; k < arr.length; k++){
-            insertCard(arr[k]);
+            insertCard(arr[k].title, arr[k].author, arr[k].details);
         }
     }
 }
@@ -185,9 +186,7 @@ function insertCard(title,author,text){
         myCardFooter.className = "card-footer text-center";
         myCardFooter.appendChild(document.createTextNode(author));
         let titleLink = document.createElement('a');
-        let titleText = document.createTextNode(text);
-        titleLink.href = "book.html?title="+text;
-        myCardBody.appendChild(titleText);
+        titleLink.href = "book.html?title="+title;
         myCard.appendChild(myCardHeader);
         myCard.appendChild(myCardBody);
         myCard.appendChild(myCardFooter);
