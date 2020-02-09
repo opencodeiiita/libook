@@ -68,7 +68,7 @@ footer {
     }
 }
 
-.card{
+.card {
     color: #434343;
 }
 
@@ -92,4 +92,68 @@ footer {
 
 .page_controls {
     margin-bottom: 1em;
+}
+
+.drag {
+    position: relative;
+    left: 100px;
+    border: 4px dashed #aaa;
+    background-color: white;
+    width: 80%;
+    top: 42px;
+    height: 40%;
+    /*padding-left: 100px;*/
+    color: #aaa;
+    padding-left: 100px;
+}
+
+#fileUploader {
+    position: relative;
+    padding-top: 78px;
+    padding-bottom: 30px;
+    padding-left: 100px;
+    left: -100px;
+    top: -75px;
+}
+.upload {
+    position: absolute;
+    left: 180px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+    .drag {
+        left: 50px;
+        padding-left: 55px;
+    }
+    .upload {
+        left: 140px;
+    }
+}
+@media (max-width: 991px) {
+    .drag {
+        padding-left: 20px;
+    }
+    .upload {
+        left: 100px;
+    }
+}
+@media (max-width: 767px) {
+    .drag {
+        padding-left: 0px;
+        font-size: 14px;
+    }
+    .upload {
+        left: 65px;
+    }
+}
+@media (max-width: 575px) {
+    .drag {
+        padding-left: 50px;
+        font-size: 18px;
+        height: 60%;
+    }
+    .upload {
+        left: 155px;
+    }
 }
