@@ -11,12 +11,49 @@ addBtn.addEventListener('click', handleAdd);
 searchBtn.addEventListener('click',handleSearch);
 filter.addEventListener('click',handleFilter);
 let i = localStorage.length;
-var type;
+var type,book;
+
+
+
+
+(function(){
+var fileUploader =  document.getElementById("fileUploader");
+var drag=document.querySelector('.drag');
+fileUploader.addEventListener('change', handleFileUpload, false);
+fileUploader.addEventListener('dragover',highlight);
+fileUploader.addEventListener('dragleave',unhighlight);
+
+function highlight(){
+    drag.style.background='#eee';
+    
+}
+
+function unhighlight(){
+    drag.style.background='#fff';
+}
+
+
+
+function handleFileUpload(event){
+    var file = event.target.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+  
+    book=e.target.result;
+  };
+
+  reader.readAsText(file,'base64');
+}
+    
+
+})()
+
+
 
 
 updateList();
 
-var Details=function(title,details,author,Pages,img,addTime,startTime,finishTime){
+var Details=function(title,details,author,book,Pages,img,addTime,startTime,finishTime){
     this.title=title;
     this.details=details;
     this.img=img;
@@ -25,6 +62,7 @@ var Details=function(title,details,author,Pages,img,addTime,startTime,finishTime
     this.finishTime=finishTime;
     this.author=author;
     this.Pages=Pages;
+    this.book=book;
 }
 var Titles=[];
 
@@ -56,7 +94,8 @@ function handleAdd(e){
             document.getElementById("success").innerHTML ="<div class='alert alert-success'> Title added successfully </div>";
             document.getElementById("dupli").innerHTML ="";
             setTimeout(function() {document.getElementById('success').innerHTML='';},3000);
-            newTitle=new Details(addTxt.value,addDetails.value,addAuthor.value);
+            newTitle=new Details(addTxt.value,addDetails.value,addAuthor.value,book);
+            console.log(newTitle);
             localStorage.setItem(newTitle.title, JSON.stringify(newTitle));
             if(localStorage.length ==1) 
                 titles.removeChild(titleMessage);
@@ -121,7 +160,8 @@ function handleSearch(e){
             console.log(type);
             var str1=(JSON.parse(localStorage.getItem(key))).title;
             var str2=(JSON.parse(localStorage.getItem(key))).author; 
-            var str3=(JSON.parse(localStorage.getItem(key))).details; 
+            var str3=(JSON.parse(localStorage.getItem(key))).details;
+            // var str4= (JSON.parse(localStorage.getItem(key))).book;
             var re = new RegExp(str,"gi");
             if(type==='title')
             {
@@ -153,6 +193,7 @@ function handleSearch(e){
         document.getElementById("dupli").innerHTML ="";
         document.getElementById("success").innerHTML ="";
         for(let k = 0; k < arr.length; k++){
+
             insertCard(arr[k].title, arr[k].author, arr[k].details);
         }
     }
@@ -165,6 +206,7 @@ function updateList(){
         for(var j = 0; j <localStorage.length; j++){
             var key=localStorage.key(j);
             try {
+
                 insertCard((JSON.parse(localStorage.getItem(key))).title,(JSON.parse(localStorage.getItem(key))).author,(JSON.parse(localStorage.getItem(key))).details);
             } catch (error){
                 console.log(error);
