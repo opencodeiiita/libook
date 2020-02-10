@@ -14,9 +14,24 @@ let i = localStorage.length;
 var type,book;
 
 
+
+
 (function(){
 var fileUploader =  document.getElementById("fileUploader");
+var drag=document.querySelector('.drag');
 fileUploader.addEventListener('change', handleFileUpload, false);
+fileUploader.addEventListener('dragover',highlight);
+fileUploader.addEventListener('dragleave',unhighlight);
+
+function highlight(){
+    drag.style.background='#eee';
+    
+}
+
+function unhighlight(){
+    drag.style.background='#fff';
+}
+
 
 
 function handleFileUpload(event){
