@@ -157,3 +157,26 @@ footer {
         left: 155px;
     }
 }
+* {
+    box-sizing: border-box;
+}
+
+.card-header {
+    color: black !important;
+    height: 100px !important;
+    margin-bottom: 10px !important;
+    border: 2px solid #ccc !important;
+}
+.card-body {
+    color: black !important;
+    height: 100px !important;
+    margin-bottom: 10px !important;
+    border-top: 2px solid #ccc !important;
+    border-bottom: 2px solid #ccc !important;
+}
+.card-footer {
+    color: black !important;
+    height: 100px !important;
+    margin-bottom: 10px !important;
+    border: 2px solid #ccc !important;
+}

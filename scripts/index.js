@@ -12,7 +12,7 @@ searchBtn.addEventListener('click',handleSearch);
 filter.addEventListener('click',handleFilter);
 let i = localStorage.length;
 var type,book;
-
+// localStorage.clear();
 
 
 
@@ -77,7 +77,6 @@ function handleAdd(e){
                 try{
                     if ((JSON.parse(localStorage.getItem(key))).title === addTxt.value) {
                         m=1;
-                        console.log('dsa');
                         break;
                     }
                 } catch (error){
@@ -217,16 +216,21 @@ function updateList(){
 
 function insertCard(title,author,text){
     let myCard = document.createElement('div');
-        myCard.className = "card";
+        myCard.className = "row";
         let myCardHeader = document.createElement('div');
-        myCardHeader.className = "card-header text-center";
+        myCardHeader.className = "card-header text-center col-sm-3";
         myCardHeader.appendChild(document.createTextNode(title));
-    let myCardBody = document.createElement('div');
-        myCardBody.className = "card-body text-center";
 
-    let myCardFooter = document.createElement('div');
-        myCardFooter.className = "card-footer text-center";
+        let myCardFooter = document.createElement('div');
+        myCardFooter.className = "card-footer text-center col-sm-3";
         myCardFooter.appendChild(document.createTextNode(author));
+
+        let myCardBody = document.createElement('div');
+        myCardBody.className = "card-body text-center col-sm-6";
+        // myCardFooter.appendChild(document.createTextNode(Body));
+
+
+        
         let titleLink = document.createElement('a');
         titleLink.href = "book.html?title="+title;
         myCard.appendChild(myCardHeader);
