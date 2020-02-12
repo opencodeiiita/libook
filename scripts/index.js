@@ -12,7 +12,7 @@ searchBtn.addEventListener('click',handleSearch);
 filter.addEventListener('click',handleFilter);
 let i = localStorage.length;
 var type,book;
-// localStorage.clear();
+localStorage.clear();
 
 
 
@@ -227,8 +227,7 @@ function insertCard(title,author,text){
 
         let myCardBody = document.createElement('div');
         myCardBody.className = "card-body text-center col-sm-6";
-        // myCardFooter.appendChild(document.createTextNode(Body));
-
+        // myCardBody.appendChild(document.createTextNode(text));
 
         
         let titleLink = document.createElement('a');

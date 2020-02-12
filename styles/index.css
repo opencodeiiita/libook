@@ -156,7 +156,20 @@ footer {
     .upload {
         left: 155px;
     }
+    .card-header {
+        width: 100px !important;
+    }
+    .card-body {
+        width: 150px !important;
+    }
+    .card-footer {
+        width: 100px !important;
+    }
+    .row {
+        font-size: 15px !important;
+    }
 }
+
 * {
     box-sizing: border-box;
 }
