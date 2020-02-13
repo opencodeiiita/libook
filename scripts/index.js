@@ -12,7 +12,7 @@ searchBtn.addEventListener('click',handleSearch);
 filter.addEventListener('click',handleFilter);
 let i = localStorage.length;
 var type,book;
-localStorage.clear();
+// localStorage.clear();
 
 
 
@@ -217,26 +217,81 @@ function updateList(){
 function insertCard(title,author,text){
     let myCard = document.createElement('div');
         myCard.className = "row";
+
         let myCardHeader = document.createElement('div');
-        myCardHeader.className = "card-header text-center col-sm-3";
+        myCardHeader.className = "card-header text-center";
+        let myCardHeaderImg=document.createElement('img');
+        myCardHeaderImg.className="Imgg";
+        myCardHeaderImg.src="../resources/img/dummy.jpg ";
+        myCardHeader.appendChild(myCardHeaderImg);
+        // var html="<img  src=\"../resources/img/dummy.jpg\" height=\"100px\" width=\"100%\"></img>";
+        myCardHeaderspa=document.createElement('br');
+        myCardHeaderspa1=document.createElement('br');
+        myCardHeaderspa2=document.createElement('br');
+        myCardHeaderspa3=document.createElement('br');
+        myCardHeaderspa4=document.createElement('br');
+
+        myCardHeader.appendChild(myCardHeaderspa1);
+        myCardHeader.appendChild(myCardHeaderspa2);
+        myCardHeader.appendChild(myCardHeaderspa);
+        myCardHeader.appendChild(myCardHeaderspa3);
+        myCardHeader.appendChild(myCardHeaderspa4);
+
         myCardHeader.appendChild(document.createTextNode(title));
 
+
+
         let myCardFooter = document.createElement('div');
-        myCardFooter.className = "card-footer text-center col-sm-3";
+        let myCardfooterImg=document.createElement('img');
+        myCardfooterImg.className="Imgg";
+        myCardfooterImg.src="../resources/img/dummy.jpg ";
+        myCardFooter.className = "card-footer text-center ";
+        myCardFooter.appendChild(myCardfooterImg);
+        myCardFooterspa=document.createElement('br');
+        myCardFooterspa1=document.createElement('br');
+        myCardFooterspa2=document.createElement('br');
+        myCardFooterspa3=document.createElement('br');
+        myCardFooterspa4=document.createElement('br');
+
+        myCardFooter.appendChild(myCardFooterspa1);
+        myCardFooter.appendChild(myCardFooterspa2);
+        myCardFooter.appendChild(myCardFooterspa);
+        myCardFooter.appendChild(myCardFooterspa3);
+        myCardFooter.appendChild(myCardFooterspa4);
+
         myCardFooter.appendChild(document.createTextNode(author));
 
         let myCardBody = document.createElement('div');
-        myCardBody.className = "card-body text-center col-sm-6";
-        // myCardBody.appendChild(document.createTextNode(text));
+        let myCardBodyImg=document.createElement('img');
+        myCardBodyImg.className="Imgg";
+        myCardBodyImg.src="../resources/img/dummy.jpg ";
+        myCardBody.className = "card-body text-center ";
+        myCardBody.appendChild(myCardBodyImg);
+        myCardBodyspa=document.createElement('br');
+        myCardBodyspa1=document.createElement('br');
+        myCardBodyspa2=document.createElement('br');
+        myCardBodyspa3=document.createElement('br');
+        myCardBodyspa4=document.createElement('br');
+
+        myCardBody.appendChild(myCardBodyspa1);
+        myCardBody.appendChild(myCardBodyspa2);
+        myCardBody.appendChild(myCardBodyspa);
+        myCardBody.appendChild(myCardBodyspa3);
+        myCardBody.appendChild(myCardBodyspa4);
+
+        myCardBody.appendChild(document.createTextNode(text));
 
         
         let titleLink = document.createElement('a');
         titleLink.href = "book.html?title="+title;
+        
         myCard.appendChild(myCardHeader);
+        
         myCard.appendChild(myCardBody);
         myCard.appendChild(myCardFooter);
         titles.appendChild(myCard);
         titleLink.appendChild(myCard);
         titles.appendChild(titleLink);
+        // document.querySelector('.card-header text-center').insertAdjacentHTML('beforeend',html);
 }
 

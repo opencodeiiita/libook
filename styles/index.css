@@ -175,21 +175,52 @@ footer {
 }
 
 .card-header {
+    position: relative;
     color: black !important;
     height: 100px !important;
     margin-bottom: 10px !important;
     border: 2px solid #ccc !important;
+    margin-right: 10px;
+    margin-left: 40px;
+
+    width: 30%;
+    height: 200px !important;
 }
 .card-body {
-    color: black !important;
-    height: 100px !important;
-    margin-bottom: 10px !important;
-    border-top: 2px solid #ccc !important;
-    border-bottom: 2px solid #ccc !important;
-}
-.card-footer {
+    position: relative;
+
     color: black !important;
     height: 100px !important;
     margin-bottom: 10px !important;
     border: 2px solid #ccc !important;
+    padding-top: 10px !important;
+    /*border-bottom: 2px solid #ccc !important;*/
+    width: 30% !important;
+    margin-right: 10px;
+    height: 200px !important;
+}
+.card-footer {
+    position: relative;
+
+    color: black !important;
+    height: 100px !important;
+    margin-bottom: 10px !important;
+    border: 2px solid #ccc !important;
+    width: 30%;
+    margin-right: 40px;
+    height: 200px !important;
+}
+
+.messs {
+    position: absolute;
+    /*top: 400px;*/
+    left: 130px;
+    top: 130px;
+}
+.Imgg {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 90%;
+    height: 100px;
 }
