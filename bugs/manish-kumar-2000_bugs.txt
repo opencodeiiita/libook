@@ -1,0 +1,3 @@
+1. Inappropriate Color Combination: When "Search By" button is clicked and we select either options like "Title" there color combination is bad. Text is not resolving correctly.
+2. Restrictions in Uploading Files: there should be restriction of size of file being uploaded because of storage concern.
+3. Restricition in type of uploaded file: Uploader should allow only .pdf, .txt, .docx extension files but here it allow all type of files.
