@@ -1,0 +1,2 @@
+Book Uploader sholud only allow PDF,Docx, Txt file.
+but as of now it allows any file type to be uploaded.
