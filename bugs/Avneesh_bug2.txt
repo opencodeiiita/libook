@@ -1,0 +1,2 @@
+When Add is clicked it sets all text boxes to default but Book Uploader stil hold the book name and details.
+It should loose all data and should Display "No File chosen".
