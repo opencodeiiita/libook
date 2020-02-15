@@ -100,6 +100,7 @@ function handleAdd(e){
             if(localStorage.length ==1) 
                 titles.removeChild(titleMessage);
             insertCard(newTitle.title, newTitle.details,newTitle.author);
+            document.getElementById("mess").innerHTML = "Drop book or Click to upload<br><input type='file' id='fileUploader' name='avatar' accept='.pdf'>";
             addTxt.value="";
             addAuthor.value="";
             addDetails.value="";
