@@ -12,7 +12,7 @@ searchBtn.addEventListener('click',handleSearch);
 filter.addEventListener('click',handleFilter);
 let i = localStorage.length;
 var type,book;
-
+// localStorage.clear();
 
 
 
@@ -77,7 +77,6 @@ function handleAdd(e){
                 try{
                     if ((JSON.parse(localStorage.getItem(key))).title === addTxt.value) {
                         m=1;
-                        console.log('dsa');
                         break;
                     }
                 } catch (error){
@@ -217,22 +216,40 @@ function updateList(){
 }
 
 function insertCard(title,author,text){
-    let myCard = document.createElement('div');
-        myCard.className = "card";
-        let myCardHeader = document.createElement('div');
-        myCardHeader.className = "card-header text-center";
-        myCardHeader.appendChild(document.createTextNode(title));
-    let myCardBody = document.createElement('div');
-        myCardBody.className = "card-body text-center";
 
-    let myCardFooter = document.createElement('div');
-        myCardFooter.className = "card-footer text-center";
+        let myCard = document.createElement('div');
+        myCard.className = "row1 ";
+        let myCardHeader = document.createElement('div');
+        myCardHeader.className="card-header text-center "
+        let myCardHeaderImg=document.createElement('img');
+        myCardHeaderImg.className="Imgg";
+        myCardHeaderImg.src="../resources/img/dummy.jpg ";
+        myCard.appendChild(myCardHeaderImg);
+        myCardHeaderspa=document.createElement('br');
+
+        myCardHeader.appendChild(myCardHeaderspa);
+        myCardHeader.appendChild(document.createTextNode(title));
+        myCard.appendChild(myCardHeader);
+
+        let myCardBody = document.createElement('div');
+        myCardBody.className = "card-body text-center ";
+        myCardBodyspa=document.createElement('br');
+        myCardBody.appendChild(myCardBodyspa);
+        myCardBody.appendChild(document.createTextNode(text));
+        myCard.appendChild(myCardBody);
+
+        let myCardFooter = document.createElement('div');
+        myCardFooter.className = "card-footer text-center ";
+        myCardFooterspa=document.createElement('br');
+        myCardFooter.appendChild(myCardFooterspa);
         myCardFooter.appendChild(document.createTextNode(author));
+        myCard.appendChild(myCardFooter);
+
+        
         let titleLink = document.createElement('a');
         titleLink.href = "book.html?title="+title;
-        myCard.appendChild(myCardHeader);
-        myCard.appendChild(myCardBody);
-        myCard.appendChild(myCardFooter);
+        
+
         titles.appendChild(myCard);
         titleLink.appendChild(myCard);
         titles.appendChild(titleLink);

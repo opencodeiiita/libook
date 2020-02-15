@@ -1,6 +1,6 @@
 footer {
     background-color: #44494d;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     font-size: 13px;
@@ -156,4 +156,59 @@ footer {
     .upload {
         left: 155px;
     }
+    .card-header {
+        width: 100px !important;
+    }
+    .card-body {
+        width: 150px !important;
+    }
+    .card-footer {
+        width: 100px !important;
+    }
+    .row {
+        font-size: 15px !important;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.card-header {
+    margin-top: 150px;
+    background-color: transparent !important;
+    border: 0px !important;
+}
+.row1 {
+    position: relative;
+    color: black !important;
+    height: 100px !important;
+    margin-bottom: 10px !important;
+    border: 2px solid #ccc !important;
+    margin-right: 10px;
+    margin-left: 60px;
+
+    width: 25% !important;
+    height: 400px !important;
+    float: left;
+
+}
+
+.card-footer {
+    background-color: transparent !important;
+    border-top: 0px !important;
+}
+
+.messs {
+    position: absolute;
+    /*top: 400px;*/
+    left: 130px;
+    top: 130px;
+}
+.Imgg {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 90%;
+    height: 150px;
 }
