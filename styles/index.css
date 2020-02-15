@@ -190,6 +190,8 @@ footer {
 
     width: 25% !important;
     height: 400px !important;
+    float: left;
+
 }
 
 .card-footer {
